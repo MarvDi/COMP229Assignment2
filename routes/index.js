@@ -42,4 +42,9 @@ router.get('/List', function(req, res, next) {
   res.render('list', { title: 'Business Contacts' });
 });
 
+/* GET Update View page. */
+router.get('/Update', function(req, res, next) {
+  res.render('update', { title: 'Update' });
+});
+
 module.exports = router;

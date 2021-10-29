@@ -55,6 +55,35 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/Contact"><i class="fas fa-phone-square"></i> Contact Me</a>
                   </li>
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <% if (title == "Login"){ %>
+                      <li class="nav-item active"> 
+                    <% } else { %>
+                      <li class="nav-item">
+                    <% } %>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/Login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    </li>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <% if (title == "List"){ %>
+                        <li class="nav-item active"> 
+                      <% } else { %>
+                        <li class="nav-item">
+                      <% } %>
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/List"><i class="fas fa-business-time"></i> Business Contacts</a>
+                      </li>
+
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <% if (title == "Update"){ %>
+                          <li class="nav-item active"> 
+                        <% } else { %>
+                          <li class="nav-item">
+                        <% } %>
+                        <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="/Update"><i class="fas fa-edit"></i> Update</a>
+                        </li>
         </ul>
       </div>
     </div>
