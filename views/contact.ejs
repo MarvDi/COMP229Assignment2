@@ -1,0 +1,37 @@
+<%- include partials/header.ejs %>
+<link href="content/contact.css" rel="stylesheet" type="text/css">
+<%- include partials/main_nav.ejs %>
+
+<main>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="jumbotron">
+          <h1>Contact Me</h1>
+        </div>
+        <div class="row" id="bodyparagraph">
+            <address>
+                Any questions? <a href="mailto:mailto:zding16@my.centennialcollege.ca">Email me</a>.<br>
+            </address>
+            <p>Or fill up the form below to send a message:</p>
+            <!-- short interactive form to provide information-->
+            <form action="/">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname"><br><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname"><br><br>
+                <label for="email">Your Email:</label><br>
+                <input type="text" id="lname"><br><br>
+                <label for="message">Message:</label><br>
+                <textarea rows="4" cols="50" name="comment" form="usrform"></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+      </div>
+
+
+
+
+
+
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
