@@ -12,6 +12,13 @@ let mongoose = require('mongoose');
 //connect to contact Model
 
 let Contact = require('../models/contacts');
+function requreAuth(req, res, next){
+    if (!req.isAuthenticated()){
+        return res.redirect('/login');
+    }
+    next();
+}
+
 
 
 let contactController = require('../controllers/contact');
@@ -22,14 +29,14 @@ router.get('/', contactController.displayContactList);
 
 
 /* GET route for contact List page - CREATE Operation*/
-router.get('/add', contactController.displayAddPage);
+router.get('/add', requreAuth, contactController.displayAddPage);
 
 // router.get('/add', (req, res, next) =>{ 
 //     res.render('contactlist/add', {title: 'Add a Contact'});
 // });
 
 /* POST route for contact List page - CREATE Operation*/
-router.post('/add', contactController.processAddPage);
+router.post('/add', requreAuth, contactController.processAddPage);
 // router.post('/add', (req, res, next) =>{
 //     let newContact = Contact({
 //         "contactName": req.body.contactName,
@@ -47,7 +54,7 @@ router.post('/add', contactController.processAddPage);
 // });
 
 /* GET route for contact List page - UPDATE Operation*/
-router.get('/edit/:id', contactController.displayEditPage);
+router.get('/edit/:id', requreAuth, contactController.displayEditPage);
 // router.get('/edit/:id', (req, res, next)=>{
 //     let id = req.params.id;
 
@@ -62,7 +69,7 @@ router.get('/edit/:id', contactController.displayEditPage);
 // });
 
 /* POST route for contact List page - UPDATE Operation*/
-router.post('/edit/:id', contactController.processEditPage);
+router.post('/edit/:id',requreAuth, contactController.processEditPage);
 // router.post('/edit/:id', (req, res, next)=>{
 //     let id = req.params.id;
 //     let updateContact = Contact({
@@ -82,7 +89,7 @@ router.post('/edit/:id', contactController.processEditPage);
 // })
 
 /* GET route for contact List page - DELETE Operation*/
-router.get('/delete/:id', contactController.deleteContact);
+router.get('/delete/:id', requreAuth, contactController.deleteContact);
 // router.get('/delete/:id',(req, res, next)=>{
 //     let id = req.params.id;
 

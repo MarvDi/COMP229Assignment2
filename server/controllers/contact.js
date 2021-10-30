@@ -13,6 +13,9 @@ let mongoose = require('mongoose');
 
 let Contact = require('../models/contacts');
 
+
+
+
 module.exports.displayContactList = (req, res, next) => {
     Contact.find((err, contactList) => {
         if (err) {
