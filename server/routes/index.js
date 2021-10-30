@@ -7,6 +7,8 @@ Date: Oct 30, 2021
 var express = require('express');
 var router = express.Router();
 
+let indexController = require('../controllers/index');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
@@ -32,26 +34,20 @@ router.get('/Contact', function(req, res, next) {
   res.render('contact', { title: 'Contact Me' });
 });
 
-/* GET Login page. */
-router.get('/Login', function(req, res, next) {
-  res.render('login', { title: 'Login' });
-});
+/* GET Route for displaying the Login page */
+router.get('/login', indexController.displayLoginPage);
 
-// /* POST Login page. */
-// router.post("/Login", passport.authenticate("local", {
-//   successRedirect: "/List",
-//   failureRedirect: "/login"
-// }), function (req, res) {
-// });
+/* POST Route for processing the Login page */
+router.post('/login', indexController.processLoginPage);
 
-/* GET Business Contacts List page. */
-// router.get('/List', function(req, res, next) {
-//   res.render('list', { title: 'Business Contacts' });
-// });
+/* GET Route for displaying the Register page */
+router.get('/register', indexController.displayRegisterPage);
 
-/* GET Update View page. */
-router.get('/Update', function(req, res, next) {
-  res.render('update', { title: 'Update' });
-});
+/* POST Route for processing the Register page */
+router.post('/register', indexController.processRegisterPage);
+
+/* GET to perform UserLogout */
+router.get('/logout', indexController.performLogout);
 
 module.exports = router;
+
