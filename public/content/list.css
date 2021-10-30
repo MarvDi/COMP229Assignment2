@@ -4,13 +4,10 @@ Student's Name: Zhengliang Ding
 Student Id: 301222388
 Date: Oct 30, 2021
 */
-.jumbotron {
-    position: absolute;
-    left: 100px;
-    top: 150px;
-  }
-#bodyparagraph {
-    position: absolute;
-    left: 100px;
-    top: 300px;
-}
+th, td { width: 200px }
+
+th#op { width: 400px }
+
+th#email { width: 400px }
+
+td#emailAdd { width: 400px }

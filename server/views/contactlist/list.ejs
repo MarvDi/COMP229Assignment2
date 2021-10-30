@@ -1,0 +1,43 @@
+<%- include ../partials/header.ejs %>
+<link href="content/list.css" rel="stylesheet" type="text/css">
+<%- include ../partials/main_nav.ejs %>
+
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1">
+            <h1><%= title %></h1>
+            <br>
+            <table class="table table-bordered table-striped table-hover text-center">
+                <thead>
+                  <tr class="d-flex">
+                      <th>Contact Name</th>
+                      <th>Contact Number</th>
+                      <th id="email">Email Address</th>
+                      <th id="op">Operations</th>
+                  </tr>
+                </thead>
+                <!-- Dynamic iterative templating-->
+                <tbody>
+                  <% for(var i=0; i < ContactList.length; i++) { %>
+                    <tr class="d-flex">
+                      <td><%= ContactList[i].contactName %></td>
+                      <td><%= ContactList[i].contactNumber %></td>
+                      <td id="emailAdd"><%= ContactList[i].emailAddress %></td>
+                      <td>
+                      <button type="button" class="btn btn-primary btn-sm">Update</button>
+                      </td>
+                      <td>
+                      <button type="button" class="btn btn-secondary btn-sm">Delete</button>
+                      </td>
+                    </tr>
+                  <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</main>
+
+
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

@@ -4,14 +4,14 @@
 File Name: server.js
 Student's Name: Zhengliang Ding
 Student Id: 301222388
-Date: Oct 9, 2021
+Date: Oct 30, 2021
 */
 
 /**
  * Module dependencies.
  */
 
-var app = require('./app');
+var app = require('./server/config/app');
 var debug = require('debug')('assignment-1:server');
 var http = require('http');
 
