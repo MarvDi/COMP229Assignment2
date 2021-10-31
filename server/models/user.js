@@ -3,26 +3,9 @@ let passportLocalMongoose = require('passport-local-mongoose');
 
 //create a model class
 let User = mongoose.Schema({
-    userName:{
-        type: String,
-        default:'',
-        trime: true,
-        required: 'username is required'
-    },
-    email:{
-        type: String,
-        default:'',
-        trime: true,
-        required: 'email is required'
-    },
-    created:{
-        type: Date,
-        default: Date.now
-    },
-    update:{
-        type: Date,
-        default: Date.now
-    }
+    userName:String,
+    password:String,
+    email: String
 },
 {
     collection: "users"
